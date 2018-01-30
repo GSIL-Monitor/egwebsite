@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "name": "easeglass",
+  "launch_path": "/index.html",
+  "description": "云镜-最专业、最简单、最安全的眼镜管理服务提供商，利用互联网+引领眼镜行业转型的开拓者，选择我们就是选择未来，选择希望！",
+  "icons": {
+    "128": "/images/favicons/favicon-96x96.png"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "zh-CN"
+}

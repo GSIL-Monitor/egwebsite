@@ -1,0 +1,31 @@
+name: egwebsite
+branch: master
+
+images:
+  - name: glamering/egwebsite
+    script: release/build-image.sh
+    registry: uhub.service.ucloud.cn
+    version:
+      major: 0
+      minor: 0
+
+deployments:
+  - environment: egwebsite
+    script: release/deploy.sh
+    name: egwebsite
+
+notification:
+  emails:
+    - g7tianyi@easeglass.com
+#    - renbin@easeglass.com
+#    - 363092524@qq.com
+#    - jindeng@easeglass.com
+#    - zhidan@easeglass.com
+#    - fxn9801@163.com
+  mobiles:
+#    - 18511859951
+#    - 13522808368
+    - 18610750073
+#    - 13910164949
+#    - 15689977143
+#    - 13391707962
