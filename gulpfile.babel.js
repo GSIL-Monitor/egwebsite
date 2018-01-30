@@ -88,9 +88,7 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
-      './app/scripts/tweenmax.min.js',
-      './app/scripts/wavify.js',
-      './app/scripts/main.js'
+      './app/scripts/main.min.js'
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
@@ -105,6 +103,16 @@ gulp.task('scripts', () =>
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'))
 );
+
+gulp.task('copy-vendor', () => {
+  gulp.src([
+    'app/scripts/tweenmax.min.js',
+    'app/scripts/wavify.min.js'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/scripts'))
+    .pipe($.size({title: 'copy vendor'}));
+});
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
@@ -176,7 +184,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'scripts', 'images', 'copy', 'copy-vendor'],
     'generate-service-worker',
     cb
   )
