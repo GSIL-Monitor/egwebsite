@@ -17,6 +17,7 @@ deployments:
 notification:
   emails:
     - g7tianyi@easeglass.com
+    - zhoujin198417@163.com
 #    - renbin@easeglass.com
 #    - 363092524@qq.com
 #    - jindeng@easeglass.com
@@ -28,4 +29,4 @@ notification:
     - 18610750073
 #    - 13910164949
 #    - 15689977143
-#    - 13391707962
+    - 13391707962
